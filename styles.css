@@ -87,7 +87,7 @@ body {
     border-radius: 4px;
 }
 
-.answer[type=submit] {
+.submitButton {
     margin: 10px;
     background-color: #27ae60;
     height: 50px;
@@ -187,4 +187,8 @@ body {
     border-radius: 4px;
     text-align: center;
     line-height: 40px;
+}
+
+datalist {
+    display: none;
 }

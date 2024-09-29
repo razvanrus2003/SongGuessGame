@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'; 
 
 import useSound from "use-sound"; // for handling the sound
-import sotd from "../assets/song1.mp3"; // importing the music
+// import sotd from "../assets/song1.mp3"; // importing the music
 
 import { AiFillPlayCircle, AiFillPauseCircle } from 'react-icons/ai'; // icons for play and pause
 import { IconContext } from 'react-icons'; // for customazing the icons
@@ -10,12 +10,15 @@ import ProgressBar from './ProgressBar';
 import MyForm from './Form';
 import Guess from './Guess';
 
-export default function Player() {
+export default function Player({rightArtist, rightSong, source}) {
+    
     const targets = [0.1, 0.5, 2, 4, 8, 15, 30];
     const [target, setTarget] = useState(targets[0]);
 
     const [isPlaying, setIsPlaying] = useState(false);
-    const [play, { pause, duration, sound }] = useSound(sotd);
+
+    console.log(source);
+    let [play, { pause, duration, sound }] = useSound(source);
     
     const [seconds, setSeconds] = useState(0);
 
@@ -76,9 +79,6 @@ export default function Player() {
     const [artistAnswer, setArtistAnswer] = useState('');
     const [songAnswer, setSongAnswer] = useState('');
 
-    const rightArtist = "Guns N' Roses";
-    const rightSong = "Knocking On Heavens Door";
-
     const handleSubmit = (event) => {
       event.preventDefault();
 
@@ -118,9 +118,7 @@ export default function Player() {
             setSongAnswer(''); 
           }
         }
-      }   
-
-      
+      }
     }
     
     const [trys, setTrys] = useState(0);
@@ -139,7 +137,6 @@ export default function Player() {
     const [answersState, setAnswersState] = useState(['no answer', 'no answer', 'no answer', 'no answer', 'no answer', 'no answer']);
     const [answersCache, setAnswersCache] = useState([]);
 
-
     function cacheAnswer(state, answer) {
       let newStates = [];
       let newCache = [];
@@ -156,7 +153,6 @@ export default function Player() {
       setAnswersState(newStates);
       setTrys(trys + 1);
     }
-
     return (
         <div className="component">          
           <div>

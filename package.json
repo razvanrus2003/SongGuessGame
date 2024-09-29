@@ -4,8 +4,9 @@
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run build && node server.js",
-    "build": "webpack --mode production"
+    "start": "npm run build && node api_server.js",
+    "build": "webpack --mode production",
+    "run" : "node server.js"
   },
   "author": "",
   "license": "ISC",

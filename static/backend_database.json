@@ -1,0 +1,13 @@
+[
+    { 
+    "title": "Knocking On Heavens Door", 
+    "artist": "Guns N' Roses",
+    "file": "song1.mp3"
+    },
+
+    { 
+    "title": "Johnny B. Goode", 
+    "artist": "Chuck Berry",
+    "file": "song2.mp3"
+    }
+]
